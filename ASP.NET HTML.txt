@@ -1,0 +1,51 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Song</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Welcome to My Music Page</h1>
+    <div id="video-container">
+        <iframe width="560" height="315" src=" http://jukedock.com/​Links to an external site."
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <button id="animateButton">Animate</button>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+#video-container {
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    width: fit-content;
+}
+
+#animateButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+document.getElementById('animateButton').addEventListener('click', function() {
+    const videoContainer = document.getElementById('video-container');
+    videoContainer.style.transition = 'transform 1s';
+    videoContainer.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        videoContainer.style.transform = 'rotate(0deg)';
+    }, 1000);
+});
